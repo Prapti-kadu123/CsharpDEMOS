@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+      <h1  style="background-color:rgb(201, 76, 76);" > Registration Form</h1>
+      <h3 style="background color:green"> <u>Students Information</u></h3>
+    </head>
+ 
+  <body  style="background-color:coral;">
+  <table>
+     <div class="container"><br>
+     
+      <div class="col-lg-5 n-auto d-block">
+     
+     
+      <form action="*" onsubmit="return vaildation()">
+
+      
+          <tr>
+          <td><div class="form-group">
+         <td><label><b> Name: </b></label></td>
+                 
+      <td><input type="text" name="Username"  size="30" id=User autocomplete="off" /></td> <br> <br>
+       <td><span id="Username" class="text-danger"> </span></td>
+         </div></td>
+          </tr>
+          <tr>
+        <td><div class="form-group">
+         <td><label> <b>Email:</b> </label></td>
+           <td><input type="text" name="Email" size="30" id=emails autocomplete="off"/></td> <br> <br>
+         <td><span id="email" class="text-danger"> </span></td>
+         </div></td>
+          </tr>
+         <tr>
+        <td><div class="form-group">
+         <td><label><b> Phone No:</b> </label></td>
+           <td><input type="text" name="Phone No" size="30"  id=PhNo autocomplete="off"/></td> <br> <br>
+        <td><span id="PhoneNo" class="text-danger"> </span></td>
+       </div></td>
+         </tr>
+           <tr>
+           <td><div class="form-group">
+         <td><label><b> Password:</b> </label></td>
+           <td><input type="text" name="Password" size="30"  id=Pass autocomplete="off"/></td> <br> <br>
+        <td><span id="pass" class="text-danger"> </span></td>
+       </div></td>
+           </tr>
+           <tr>
+           <td> <div class="form-group">
+         <td><label><b> Confirm Password :</b> </label></td>
+           <td><input type="text" name="Confirm Password" size="30"  id=CPass autocomplete="off"/></td> <br> <br>
+         <td><span id="cPass" class="text-danger"> </span></td>
+       </div></td>
+            </tr>
+            <tr>  
+            <td><div class="field moveindate">
+      <td><label for="MoveInDate"><b>BirthDate :</b></label></td>
+      <td><input autocomplete="off" class="text" id="MoveInDate" name="MoveInDate" placeholder="DD-MM-YYYY" type="date" min="1990-12-17" max="2022-09-09" spellcheck="false" value="1990-12-17"></td>
+    </div></td>
+             </tr>
+             <tr>
+
+           <td><div class="form-group">
+         <td><label><b> Gender :</b><br> </label></td>
+          <td><input type="checkbox" name="Male" value="Male"> Male<br> <input type="checkbox" name="Female" value="Female"> Female<br></td>
+         <td><span id="gender" class="text-danger"> </span></td>
+          </div></td>
+             </tr>
+             
+             <tr>  
+            <td><div class="field moveinyear">
+      <td><label for="MoveInYear"><b>10 th Passout Year :</b></label></td>
+      <td><input autocomplete="on" class="text" id="MoveInDate" name="MoveInYear" placeholder="YYYY" type="date" min="2016" max="2022" spellcheck="false" value="2016"></td>
+    </div></td>
+             </tr>
+             <tr>  
+            <td><div class="field moveinyear">
+      <td><label for="MoveInYear"><b>12 th Passout Year :</b></label></td>
+      <td><input autocomplete="on" class="text" id="MoveInDate" name="MoveInYear" placeholder="YYYY" type="date" min="2016" max="2022" spellcheck="false" value="2016"></td>
+    </div></td>
+             </tr>
+            
+          <tr><td><input type="Submit" name="Submit" value="Submit" Class="btn
+           btn-success"></td>
+          <td><input type="Reset" name="Reset" value="Reset" Class="btn
+           btn-success"></td>
+          </tr>
+        <tr>  
+     <td> <a href="homepage.html" class="previous">&laquo; Previous</a></td>
+     <td> <a href="Login Form.html" class="next">Next &raquo;</a></td>
+        </tr>
+         </form>
+         </div>
+          </div>
+
+      <script type="text/Javascript">
+     function vaildation(){
+
+     var User =document.getElementById('User').value;
+   var emails=document.getElementById('emails').value;
+     var PhNo=document.getElementById('PhNo').value;
+     var Pass =document.getElementById('Pass').value;
+    var CPass=document.getElementById('CPass').value;
+
+ if( User ==""){
+        document.getElementById('Username').innerHTML=" ** Please fill the Name field";
+       return false;
+
+    }
+     if( (User.length <= 2) || ( User.length >10)) {
+             document.getElementById('Username').innerHTML=" ** User length must be between 2 and 10";
+       return false;
+}
+      if(!isNaN(User)) {  
+  document.getElementById('Username').innerHTML=" ** Only character are allowed";
+       return false;
+}
+
+
+
+ if( emails==""){
+        document.getElementById('email').innerHTML=" ** Please fill the email field";
+       return false;
+
+  }
+
+ if( emails.indexOf('@')<=0)  {
+             document.getElementById('email').innerHTML=" ** @ invalid Position ";
+       return false;
+}
+   if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3))!='.'){  
+
+  document.getElementById('email').innerHTML=" ** . invalid Position ";
+       return false;
+}
+
+
+
+if( PhNo==""){
+        document.getElementById('PhoneNo').innerHTML=" ** Please fill the Phone No field";
+       return false;
+  }
+
+    if(isNaN(PhNo)){
+document.getElementById('PhoneNo').innerHTML=" ** Phone number must be write in digits";
+       return false;
+  }
+
+if( PhNo .length!=10){
+             document.getElementById('PhoneNo').innerHTML=" ** User Phone number must be 10 n digits";
+       return false;
+}
+
+
+if( Pass==""){
+        document.getElementById('pass').innerHTML=" ** Please fill the Password field";
+       return false;
+}
+
+if( ( Pass.length <=8) || ( Pass.length >10)) {
+             document.getElementById('pass').innerHTML=" ** password length must be between 8 and 10";
+       return false;
+}
+
+   if( Pass!=CPass){
+     document.getElementById('cPass').innerHTML=" ** Password are not matching";
+       return false;
+}
+
+if( CPass==""){
+        document.getElementById('cPass').innerHTML=" ** Please fill the Confirm Password field";
+       return false;
+}
+if( Gender==""){
+        document.getElementById('gender').innerHTML=" ** Please fill the Gender field";
+       return false;
+}
+
+
+ 
+}
+function fValidateName()
+{
+var isValid = fCheckRequired( window.document.Form1.txtName, document.getElementById('errName') );
+return isValid;
+}
+
+</script>
+</table>
+</body>
+</center>
+</html>
